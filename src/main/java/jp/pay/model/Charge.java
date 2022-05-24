@@ -1,17 +1,17 @@
 /*
  * Copyright (c) 2010-2011 Stripe (http://stripe.com)
  * Copyright (c) 2015 Base, Inc. (http://binc.jp/)
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -54,6 +54,10 @@ public class Charge extends APIResource implements MetadataStore<Charge> {
 	String subscription;
 	Map<String, String> metadata = new HashMap<String, String>();
 	String feeRate;
+	String platformFee;
+	String platformFeeRate;
+	String tenant;
+	Integer totalPlatformFee;
 
 	public String getId() {
 		return id;
@@ -210,6 +214,38 @@ public class Charge extends APIResource implements MetadataStore<Charge> {
 
 	public void setFeeRate(String feeRate) {
 		this.feeRate = feeRate;
+	}
+
+	public String getPlatformFee() {
+		return platformFee;
+	}
+
+	public void setPlatformFee(String platformFee) {
+		this.platformFee = platformFee;
+	}
+
+	public String getPlatformFeeRate() {
+		return platformFeeRate;
+	}
+
+	public void setPlatformFeeRate(String platformFeeRate) {
+		this.platformFeeRate = platformFeeRate;
+	}
+
+	public String getTenant() {
+		return tenant;
+	}
+
+	public void setTenant(String tenant) {
+		this.tenant = tenant;
+	}
+
+	public Integer getTotalPlatformFee() {
+		return totalPlatformFee;
+	}
+
+	public void setTotalPlatformFee(Integer totalPlatformFee) {
+		this.totalPlatformFee = totalPlatformFee;
 	}
 
 	public static Charge create(Map<String, Object> params)
